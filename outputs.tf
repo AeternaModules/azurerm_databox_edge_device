@@ -1,3 +1,7 @@
+output "databox_edge_devices_id" {
+  description = "Map of id values across all databox_edge_devices, keyed the same as var.databox_edge_devices"
+  value       = { for k, v in azurerm_databox_edge_device.databox_edge_devices : k => v.id }
+}
 output "databox_edge_devices_device_properties" {
   description = "Map of device_properties values across all databox_edge_devices, keyed the same as var.databox_edge_devices"
   value       = { for k, v in azurerm_databox_edge_device.databox_edge_devices : k => v.device_properties }
